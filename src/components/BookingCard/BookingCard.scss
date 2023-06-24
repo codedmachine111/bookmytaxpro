@@ -1,0 +1,61 @@
+.booking-card-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    border: 1.5px solid #0f0f0f;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    .booking-card-info{
+        width: 45%;
+        h2{
+            font-size: 18px;
+            font-weight: 600;
+            color: #000000;
+            margin: 0;
+        }
+        p{
+            font-size: 14px;
+            font-weight: 600;
+            color: #000000;
+            margin: 0;
+        }
+        #expert{
+            color: #3770FF;
+        }
+    }
+    .booking-card-date{
+        width: 33.33%;
+        p{
+            font-size: 14px;
+            font-weight: 600;
+            color: #000000;
+            margin: 0;
+        }
+    }
+    .booking-card-status{
+        width: 33.33%;
+        p{
+            font-size: 14px;
+            font-weight: 600;
+            color: #000000;
+            margin: 0;
+        }
+        #pending{
+            color: #FFC107;
+        }
+        #completed{
+            color: #4CAF50;
+        }
+        .btn{
+            border: 1.5px solid #0f0f0f;
+            font-size: 0.6rem;
+            background-color: #4CAF50;
+        }
+        #add-rating{
+            background-color: #FFC107;
+        }
+    }
+}

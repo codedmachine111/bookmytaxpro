@@ -6,6 +6,7 @@ import { CircularProgress } from "@mui/material";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { BookingsContext } from "../../App";
 import { ExpertsList } from "../../components/ExpertsList/ExpertsList";
+import { BookingsBoard } from "../../components/BookingsBoard/BookingsBoard";
 
 export const HomePage = () => {
   const { authUser, setAuthUser } = useContext(UserContext);
@@ -62,7 +63,10 @@ export const HomePage = () => {
               </h1>
             </div>
             <div className="home-content">
-              <div className="home-content-user">hi</div>
+              <div className="home-content-user">
+                <h1>Your Booked Services</h1>
+                <BookingsBoard />
+              </div>
               <div className="home-content-experts">
                 <h1>Our Experts</h1>
                 <ExpertsList />
