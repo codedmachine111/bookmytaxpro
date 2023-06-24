@@ -4,6 +4,7 @@ import { LandingPage } from "./pages/LandingPage/LandingPage";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { Auth } from "./pages/Auth/Auth";
 import { createContext, useState } from "react";
+import { BookPage } from "./pages/BookPage/BookPage";
 
 export const UserContext = createContext();
 export const BookingsContext = createContext();
@@ -27,6 +28,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/home" element={<HomePage />} />
+                <Route path="/book" element={<BookPage />} />
                 <Route path="/auth" element={<Auth />} />
               </Routes>
             </Router>
