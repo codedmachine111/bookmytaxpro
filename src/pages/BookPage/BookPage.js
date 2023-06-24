@@ -23,18 +23,19 @@ export const BookPage = () => {
         setLoading(false);
       });
   }, []);
+
   const onChangeHandler = (e) => {
     const searchQuery = e.target.value.toLowerCase();
     const filteredExperts = listOfExperts.filter((expert) => {
       const serviceName = expert.services.toLowerCase();
-        
       const expertName = expert.name.toLowerCase();
-        return (
-            serviceName.includes(searchQuery) || expertName.includes(searchQuery)
-        )
+      return (
+        serviceName.includes(searchQuery) || expertName.includes(searchQuery)
+      );
     });
     setFilteredExperts(filteredExperts);
   };
+
   return (
     <>
       <div className="book-page-container">
@@ -62,7 +63,7 @@ export const BookPage = () => {
             </>
           ) : (
             <>
-              <h2>Availabe Experts: </h2>
+              <h2>Available Experts: </h2>
               <FilteredList listOfExperts={filteredExperts} />
             </>
           )}
