@@ -110,6 +110,7 @@
   min-height: 100vh;
   height: auto;
   width: 100%;
+  padding: 1rem;
   #loading {
     #loadbar {
       background: none;
@@ -121,45 +122,48 @@
       width: 100%;
     }
   }
-  .home-content {
-    .home-title {
-      width: 100%;
+  .home-title {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #0f0f0f;
+      align-content: left;
+      margin-bottom: 0.5rem;
+      #diff {
+        color: #f8b500;
+      }
+    }
+    .signout-icon {
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: row;
-      padding: 0.5rem 0;
-      h1 {
-        font-size: 1.5rem;
-        font-weight: 600;
+      cursor: pointer;
+      svg {
+        width: 100%;
         color: #0f0f0f;
-        align-content: left;
-        margin-bottom: 0.5rem;
-        #diff {
-          color: #f8b500;
-        }
-      }
-      .signout-icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        svg {
-          width: 100%;
-          color: #0f0f0f;
-          font-size: 1.5rem;
-          margin: auto;
-        }
+        font-size: 1.5rem;
+        margin: auto;
       }
     }
-    .amount-widgets {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 5%;
-      height: auto;
-      margin: 1rem 0;
+  }
+  .home-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .home-content-user {
+      width: 50%;
+      padding: 1rem;
+    }
+    .home-content-experts{
+      width: 50%;
+      padding: 1rem;
     }
   }
 

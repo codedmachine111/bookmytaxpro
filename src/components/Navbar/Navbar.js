@@ -39,6 +39,11 @@ export const Navbar = () => {
             </Link>
           </li>
           <li>
+            <Link to="/book" id="d">
+              Book
+            </Link>
+          </li>
+          <li>
             <FontAwesomeIcon
               icon={faRightFromBracket}
               id="signout-icon"

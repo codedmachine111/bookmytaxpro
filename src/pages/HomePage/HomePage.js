@@ -2,17 +2,16 @@ import "./HomePage.scss";
 import { UserContext } from "../../App";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { BookingsContext } from "../../App";
+import { ExpertsList } from "../../components/ExpertsList/ExpertsList";
 
 export const HomePage = () => {
   const { authUser, setAuthUser } = useContext(UserContext);
   const { listOfBookings, setListOfBookings } = useContext(BookingsContext);
-  
+
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
@@ -57,11 +56,16 @@ export const HomePage = () => {
           </>
         ) : (
           <>
+            <div className="home-title">
+              <h1>
+                Hello, <span>{authUser.name}!</span>
+              </h1>
+            </div>
             <div className="home-content">
-              <div className="home-title">
-                <h1>
-                  Hello, <span>{authUser.name}!</span>
-                </h1>
+              <div className="home-content-user">hi</div>
+              <div className="home-content-experts">
+                <h1>Our Experts</h1>
+                <ExpertsList />
               </div>
             </div>
 

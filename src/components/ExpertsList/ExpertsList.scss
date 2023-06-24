@@ -1,0 +1,44 @@
+.experts-list-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px solid #0f0f0f;
+  height: 60vh;
+  overflow: scroll;
+  border-radius: 0.3rem;
+  padding: 1rem;
+    flex-wrap: wrap;
+
+  #loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff;
+    #loadbar {
+      background: #fff;
+      border: none;
+      width: 0.2rem;
+    }
+    svg {
+      background-color: #fff;
+      color: #0f0f0f;
+      width: 100%;
+    }
+  }
+  .experts-list-title {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .experts-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    flex-wrap: wrap;
+  }
+}
