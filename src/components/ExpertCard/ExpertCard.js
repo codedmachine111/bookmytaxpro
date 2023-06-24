@@ -9,7 +9,7 @@ import { CircularProgress } from "@mui/material";
 import axios from "axios";
 
 export const ExpertCard = (props) => {
-  const { name, rating, services } = props;
+  const { name, rating, services, totalRatings } = props;
   const [editing, setEditing] = useState(false);
   const [selectedExpert, setSelectedExpert] = useState(name);
   const [loading, setLoading] = useState(false);
@@ -28,7 +28,6 @@ export const ExpertCard = (props) => {
       service: document.getElementById("service").value,
       userId: authUser.userId,
     };
-    console.log(expertObject);
     axios
       .post(
         `http://localhost:3001/booking/add`,
@@ -59,11 +58,7 @@ export const ExpertCard = (props) => {
   const onCancelEditHandler = () => {
     setEditing(false);
   };
-
-  const handleExpertChange = (e) => {
-    setSelectedExpert(e.target.value);
-  };
-
+  
   return (
     <>
       <div className="expert-card-container">
@@ -75,6 +70,7 @@ export const ExpertCard = (props) => {
             <div className="expert-card-details">
               <div className="expert-card-name">{name}</div>
               <div className="expert-card-rating">Rating: {rating}</div>
+              <div className="expert-card-total-ratings">Total Ratings: {totalRatings}</div>
               <div className="expert-card-services">Services: {services}</div>
             </div>
             <div className="expert-card-button">

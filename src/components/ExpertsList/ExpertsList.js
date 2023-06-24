@@ -42,6 +42,7 @@ export const ExpertsList = () => {
                       name={expert.name}
                       rating={expert.rating}
                       services={expert.services}
+                      totalRatings={expert.totalRatings}
                     />
                   </>
                 );

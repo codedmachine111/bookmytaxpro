@@ -27,6 +27,7 @@ export const BookingsBoard = () => {
         }
       });
   }, []);
+
   return (
     <>
       <div className="bookings-board-container">

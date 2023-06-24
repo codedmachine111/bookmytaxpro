@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { CircularProgress } from "@mui/material";
 import { Button } from "../Button/Button";
+import { parse } from "@fortawesome/fontawesome-svg-core";
 
 export const BookingCard = (props) => {
   const { service, date, status, expertName, ticketId } = props;
   const [loading, setLoading] = useState(false);
-  
+  const [editing, setEditing] = useState(false);
+
   const onMarkCompleteHandler = () => {
     setLoading(true);
     axios
@@ -33,6 +35,66 @@ export const BookingCard = (props) => {
         }
       });
   };
+
+  const onEditHandler = () => {
+    setEditing(true);
+  };
+
+  const onCancelEditHandler = () => {
+    setEditing(false);
+  };
+
+  const onSaveEditHandler = () => {
+    setLoading(true);
+    const rating = parseInt(document.getElementById("rating").value);
+  
+    axios
+      .get(`http://localhost:3001/expert/byName`,{
+        expertName: expertName,
+      })
+      .then((res) => {
+        if (res.data.error) {
+          console.log(res.data.error);
+          setLoading(false);
+        } else {
+          const expert = res.data;
+          const expertId = expert.id;
+          const currentRating = expert.rating ? expert.rating : 0;
+          const totalRatings = expert.totalRatings ? expert.totalRatings : 0;
+  
+          // Calculate the new average rating
+          const newTotalRatings = totalRatings + 1;
+          const newRating =
+            (currentRating * totalRatings + rating) / newTotalRatings;
+  
+          // Update the expert's rating and totalRatings in the database
+          axios
+            .put(
+              `http://localhost:3001/expert/update/`,
+              {
+                rating: newRating,
+                totalRatings: newTotalRatings,
+                expertName: expertName,
+              },
+              {
+                headers: {
+                  accessToken: localStorage.getItem("token"),
+                },
+              }
+            )
+            .then((res) => {
+              if (res.data.error) {
+                console.log(res.data.error);
+              } else {
+                setLoading(false);
+                window.location.reload();
+              }
+            });
+        }
+      });
+  };
+  
+
   return (
     <>
       <div className="booking-card-container">
@@ -68,7 +130,50 @@ export const BookingCard = (props) => {
             <>
               <p>
                 Status : <span id="completed">{status}</span>
-                <Button title="Add rating" id="add-rating"/>
+                {editing ? (
+                  <>
+                    <div className="book-edit-form">
+                      <div className="book-edit-form-data">
+                        <div className="book-edit-form-rating">
+                          <label htmlFor="rating">Rating/5</label>
+                          <input type="number" id="rating" name="rating" max={5}/>
+                        </div>
+                      </div>
+                      {loading ? (
+                        <>
+                          <div id="form-loading">
+                            <CircularProgress id="form-loadbar" />
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="book-edit-form-buttons">
+                            <Button
+                              title="Save"
+                              onClick={onSaveEditHandler}
+                              icon="faCheck"
+                              id="save-icon"
+                            />
+                            <Button
+                              title="Cancel"
+                              onClick={onCancelEditHandler}
+                              icon="faXmark"
+                              id="cancel-icon"
+                            />
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <Button
+                      title="Add rating"
+                      id="add-rating"
+                      onClick={onEditHandler}
+                    />
+                  </>
+                )}
               </p>
             </>
           )}

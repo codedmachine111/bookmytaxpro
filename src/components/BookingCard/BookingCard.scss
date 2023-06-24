@@ -1,61 +1,146 @@
-.booking-card-container{
-    width: 100%;
+.booking-card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  border: 1.5px solid #0f0f0f;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  .booking-card-info {
+    width: 45%;
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #000000;
+      margin: 0;
+    }
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      color: #000000;
+      margin: 0;
+    }
+    #expert {
+      color: #3770ff;
+    }
+  }
+  .booking-card-date {
+    width: 33.33%;
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      color: #000000;
+      margin: 0;
+    }
+  }
+  .booking-card-status {
+    width: 33.33%;
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      color: #000000;
+      margin: 0;
+    }
+    #pending {
+      color: #ffc107;
+    }
+    #completed {
+      color: #4caf50;
+    }
+    .btn {
+      border: 1.5px solid #0f0f0f;
+      font-size: 0.6rem;
+      background-color: #4caf50;
+    }
+    #add-rating {
+      background-color: #ffc107;
+    }
+  }
+
+  .book-edit-form {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5%;
-    border: 1.5px solid #0f0f0f;
-    padding: 0.5rem;
-    border-radius: 0.3rem;
-    .booking-card-info{
-        width: 45%;
-        h2{
-            font-size: 18px;
-            font-weight: 600;
-            color: #000000;
-            margin: 0;
-        }
-        p{
-            font-size: 14px;
-            font-weight: 600;
-            color: #000000;
-            margin: 0;
-        }
-        #expert{
-            color: #3770FF;
-        }
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.2rem;
+    gap: 1%;
+
+    #form-loading {
+      margin: 1rem 0;
+      text-align: center;
+      #form-loadbar {
+        background: none;
+        border: none;
+        width: 0.2rem;
+      }
+      svg {
+        color: #0f0f0f;
+        width: 100%;
+      }
     }
-    .booking-card-date{
-        width: 33.33%;
-        p{
-            font-size: 14px;
-            font-weight: 600;
-            color: #000000;
+
+    .book-edit-form-data {
+      width: 100%;
+
+      .book-edit-form-rating {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5%;
+
+        label {
+          color: #0f0f0f;
+          font-size: 1rem;
+          text-decoration: underline;
+          font-weight: bold;
+        }
+        #rating {
+          width: 100%;
+          border: 1px solid #0f0f0f;
+          padding: 0.7rem;
+          font-size: 0.8rem;
+          font-weight: 400;
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
             margin: 0;
+          }
+
+          &[type="number"] {
+            -moz-appearance: textfield;
+          }
         }
+      }
     }
-    .booking-card-status{
-        width: 33.33%;
-        p{
-            font-size: 14px;
-            font-weight: 600;
-            color: #000000;
-            margin: 0;
+    .book-edit-form-buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      margin: 0.5rem 0;
+      .btn {
+        margin: 0;
+        border-radius: 0;
+      }
+      #save-icon {
+        background-color: #4caf50;
+        #ic {
+          background-color: #4caf50;
         }
-        #pending{
-            color: #FFC107;
+      }
+      #cancel-icon {
+        background-color: #f44336;
+        #ic {
+          background-color: #f44336;
         }
-        #completed{
-            color: #4CAF50;
-        }
-        .btn{
-            border: 1.5px solid #0f0f0f;
-            font-size: 0.6rem;
-            background-color: #4CAF50;
-        }
-        #add-rating{
-            background-color: #FFC107;
-        }
+      }
     }
+  }
 }
