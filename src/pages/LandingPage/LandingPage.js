@@ -12,7 +12,7 @@ export const LandingPage = () => {
             <h1>BookmyTaxpro</h1>
             <p>
               We streamline the process of finding and booking Chartered
-              Accountants by providing a user-friendly web application that
+              Accountants and Financial Experts by providing a user-friendly web application that
               enables users to easily search for financial services, select from
               a pool of expert CAs, and book consultations tailored to their
               specific needs.

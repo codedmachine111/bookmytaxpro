@@ -6,7 +6,7 @@
     padding: 2rem;
     border-radius: 10px;
     width: 30%;
-
+    border: 1.5px solid #0f0f0f;
     #loading{
         margin: 1rem 0;
         width: 100%;
@@ -17,25 +17,25 @@
             width: 0.2rem;
         }
         svg{
-            color: #fff;
-                width: 100%;
+            color: #0f0f0f;
+            width: 100%;
         }
     }
 
     h2{
         text-align: center;
         font-size: 2.2rem;
-        color: #fff;
+        color: #0f0f0f;
         width: 100%;
     }
     p{
-        color: #fff;
+        color: #0f0f0f;
         font-size: 0.8rem;
         letter-spacing: 0.3px;
         width: 100%;
         text-align: center;
         font-weight: 400;
-        opacity: 0.7;
+        opacity: 0.9;
         margin-bottom: 2rem;
 
         #bold{
@@ -47,14 +47,15 @@
     #login-input{
         width: 90%;
         border: 1.5px solid rgb(255, 255, 255);
-        color: #fff;
+        color: #0f0f0f;
         padding: 0.5rem;
         margin: 0.5rem 0;
-
+        border: 1.5px solid #0f0f0f;
+        border-radius: 0.2rem;
         &:focus{
             outline: none;
             border: none;
-            border-bottom: #BA68C8 2px solid;
+            border-bottom: #3770FF 2px solid;
             transition: 0.2s ease;
         }
     }
@@ -65,8 +66,8 @@
         color: #0f0f0f;
         margin: 1rem 0;
         font-weight: 600;
-        border-radius: 0px;
-        border: 1.5px solid #fff;
+        border-radius: 0.2rem;
+        border: 1.5px solid #0f0f0f;
 
         &:hover{
             background-color: #0f0f0f;
@@ -77,11 +78,11 @@
         text-align: center;
         margin-top: 1rem;
         font-weight: 400;
-        opacity: 0.7;
+        opacity: 0.9;
 
         a{
             text-decoration: none;
-            color: #BA68C8;
+            color: #3770FF;
         }
     }
 }
