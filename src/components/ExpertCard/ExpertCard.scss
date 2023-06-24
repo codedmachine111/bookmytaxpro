@@ -60,6 +60,21 @@
     margin: 0 auto;
     padding: 0.2rem;
     gap: 1%;
+
+    #form-loading{
+      margin: 1rem 0;
+      text-align: center;
+      #form-loadbar{
+          background: none;
+          border: none;
+          width: 0.2rem;
+      }
+      svg{
+          color: #0f0f0f;
+          width: 100%;
+      }
+  }
+
     .edit-form-data {
       width: 100%;
 

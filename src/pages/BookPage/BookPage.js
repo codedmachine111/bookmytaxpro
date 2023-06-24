@@ -4,6 +4,7 @@ import { useState, useContext, useEffect } from "react";
 import { ExpertsContext } from "../../App";
 import axios from "axios";
 import { CircularProgress } from "@mui/material";
+import { Navbar } from "../../components/Navbar/Navbar";
 
 export const BookPage = () => {
   const { listOfExperts, setListOfExperts } = useContext(ExpertsContext);
@@ -38,6 +39,7 @@ export const BookPage = () => {
 
   return (
     <>
+      <Navbar />
       <div className="book-page-container">
         <div className="book-page-content">
           <h1>Search for a service</h1>

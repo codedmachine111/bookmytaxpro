@@ -46,7 +46,7 @@ export const BookingsBoard = () => {
                       key={key}
                       ticketId={booking.id}
                       service={booking.service}
-                      expertId={booking.expertId}
+                      expertName={booking.expertName}
                       date={booking.date}
                       status={booking.status}
                     />

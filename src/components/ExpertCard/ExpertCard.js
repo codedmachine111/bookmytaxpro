@@ -4,12 +4,16 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "../Button/Button";
 import { useState, useContext } from "react";
 import { ExpertsContext } from "../../App";
+import { UserContext } from "../../App";
+import { CircularProgress } from "@mui/material";
+import axios from "axios";
 
 export const ExpertCard = (props) => {
   const { name, rating, services } = props;
   const [editing, setEditing] = useState(false);
   const [selectedExpert, setSelectedExpert] = useState(name);
-
+  const [loading, setLoading] = useState(false);
+  const { authUser } = useContext(UserContext);
   const { listOfExperts } = useContext(ExpertsContext);
 
   const onEditHandler = () => {
@@ -17,7 +21,39 @@ export const ExpertCard = (props) => {
   };
 
   const onSaveEditHandler = () => {
-    setEditing(false);
+    setLoading(true);
+    const expertObject = {
+      expertName: selectedExpert,
+      date: document.getElementById("date").value,
+      service: document.getElementById("service").value,
+      userId: authUser.userId,
+    };
+    console.log(expertObject);
+    axios
+      .post(
+        `http://localhost:3001/booking/add`,
+        {
+          expertName: expertObject.expertName,
+          date: expertObject.date,
+          service: expertObject.service,
+          userId: expertObject.userId,
+        },
+        {
+          headers: {
+            accessToken: localStorage.getItem("token"),
+          },
+        }
+      )
+      .then((res) => {
+        if (res.data.error) {
+          console.log(res.data.error);
+        } else {
+          alert("Booking Successful!");
+          window.location.reload();
+          setLoading(false);
+          setEditing(false);
+        }
+      });
   };
 
   const onCancelEditHandler = () => {
@@ -65,20 +101,30 @@ export const ExpertCard = (props) => {
                   </select>
                 </div>
               </div>
-              <div className="edit-form-buttons">
-                <Button
-                  title="Save"
-                  onClick={onSaveEditHandler}
-                  icon="faCheck"
-                  id="save-icon"
-                />
-                <Button
-                  title="Cancel"
-                  onClick={onCancelEditHandler}
-                  icon="faXmark"
-                  id="cancel-icon"
-                />
-              </div>
+              {loading ? (
+                <>
+                  <div id="form-loading">
+                    <CircularProgress id="form-loadbar" />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="edit-form-buttons">
+                    <Button
+                      title="Save"
+                      onClick={onSaveEditHandler}
+                      icon="faCheck"
+                      id="save-icon"
+                    />
+                    <Button
+                      title="Cancel"
+                      onClick={onCancelEditHandler}
+                      icon="faXmark"
+                      id="cancel-icon"
+                    />
+                  </div>
+                </>
+              )}
             </div>
           </>
         )}

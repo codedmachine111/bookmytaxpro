@@ -5,29 +5,9 @@ import { CircularProgress } from "@mui/material";
 import { Button } from "../Button/Button";
 
 export const BookingCard = (props) => {
-  const { service, date, status, expertId, ticketId } = props;
-  const [expert, setExpert] = useState("");
+  const { service, date, status, expertName, ticketId } = props;
   const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    setLoading(true);
-    axios
-      .get(`http://localhost:3001/expert/get/${expertId}`, {
-        headers: {
-          accessToken: localStorage.getItem("token"),
-        },
-      })
-      .then((res) => {
-        if (res.data.error) {
-          console.log(res.data.error);
-          setExpert("Expert not found");
-          setLoading(false);
-        } else {
-          setExpert(res.data.name);
-          setLoading(false);
-        }
-      });
-  }, []);
-
+  
   const onMarkCompleteHandler = () => {
     setLoading(true);
     axios
@@ -58,19 +38,7 @@ export const BookingCard = (props) => {
       <div className="booking-card-container">
         <div className="booking-card-info">
           <h2>{service}</h2>
-          {loading ? (
-            <>
-              <div id="loading">
-                <CircularProgress id="loadbar" />
-              </div>
-            </>
-          ) : (
-            <>
-              <p>
-                by <span id="expert">{expert}</span>
-              </p>
-            </>
-          )}
+          <p>Expert : {expertName}</p>
         </div>
         <div className="booking-card-date">
           <p>{date}</p>

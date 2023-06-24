@@ -31,7 +31,7 @@ export const Navbar = () => {
         </label>
         <ul className="list">
           <li id="active">
-            <Link to="/">Home</Link>
+            <Link to="/home">Home</Link>
           </li>
           <li>
             <Link to="/about" id="d">
