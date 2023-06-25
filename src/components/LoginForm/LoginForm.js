@@ -36,7 +36,6 @@ export const LoginForm = (props) => {
           name: res.data.name,
           userId: res.data.userId,
         });
-        console.log(res.data.accessToken)
         localStorage.setItem("token", res.data.accessToken);
         navigate("/home");
         setLoading(false);

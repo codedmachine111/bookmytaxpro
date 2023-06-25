@@ -4,14 +4,17 @@ import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { CircularProgress } from "@mui/material";
 import { Navbar } from "../../components/Navbar/Navbar";
-import { BookingsContext } from "../../App";
 import { ExpertsList } from "../../components/ExpertsList/ExpertsList";
 import { BookingsBoard } from "../../components/BookingsBoard/BookingsBoard";
+import { ChatBox } from "../../components/ChatBox/ChatBox";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRobot } from "@fortawesome/free-solid-svg-icons";
+import { ToggleChatBotContext } from "../../App";
 
 export const HomePage = () => {
   const { authUser, setAuthUser } = useContext(UserContext);
-  const { listOfBookings, setListOfBookings } = useContext(BookingsContext);
 
+  const { isChatBotOpen, setIsChatBotOpen } = useContext(ToggleChatBotContext)
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -42,9 +45,9 @@ export const HomePage = () => {
       });
   }, []);
 
-  // const toggleChatBox = () => {
-  //   setIsChatBotOpen(!isChatBotOpen);
-  // };
+  const toggleChatBox = () => {
+    setIsChatBotOpen(!isChatBotOpen);
+  }
   return (
     <>
       <Navbar />
@@ -73,7 +76,7 @@ export const HomePage = () => {
               </div>
             </div>
 
-            {/* {isChatBotOpen ? (
+            {isChatBotOpen ? (
               <>
                 <div className="chatbot-cont">
                   <ChatBox />
@@ -85,7 +88,7 @@ export const HomePage = () => {
                   <FontAwesomeIcon icon={faRobot} id="bot-icon" />
                 </div>
               </>
-            )} */}
+            )}
           </>
         )}
       </div>
