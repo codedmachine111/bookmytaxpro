@@ -69,7 +69,7 @@ export const ExpertCard = (props) => {
             </div>
             <div className="expert-card-details">
               <div className="expert-card-name">{name}</div>
-              <div className="expert-card-rating">Rating: {rating}</div>
+              <div className="expert-card-rating">Rating: <span id="rating-color">{rating}/5</span></div>
               <div className="expert-card-total-ratings">Total Ratings: {totalRatings}</div>
               <div className="expert-card-services">Services: {services}</div>
             </div>

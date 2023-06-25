@@ -34,11 +34,11 @@ export const ExpertsList = () => {
         ) : (
           <>
             <div className="experts-list">
-              {listOfExperts.map((expert) => {
+              {listOfExperts.map((expert, key) => {
                 return (
                   <>
                     <ExpertCard
-                      key={expert.id}
+                      key={key}
                       name={expert.name}
                       rating={expert.rating}
                       services={expert.services}

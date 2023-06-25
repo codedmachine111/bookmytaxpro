@@ -4,15 +4,17 @@ import { BookingsContext } from "../../App";
 import { CircularProgress } from "@mui/material";
 import axios from "axios";
 import { BookingCard } from "../BookingCard/BookingCard";
+import { UserContext } from "../../App";
+import { Link } from "react-router-dom";
 
 export const BookingsBoard = () => {
   const { listOfBookings, setListOfBookings } = useContext(BookingsContext);
   const [loading, setLoading] = useState(false);
-
+  const { authUser } = useContext(UserContext);
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:3001/booking/all", {
+      .get(`http://localhost:3001/booking/all/${authUser.userId}`,{
         headers: {
           accessToken: localStorage.getItem("token"),
         },
@@ -56,6 +58,7 @@ export const BookingsBoard = () => {
               ) : (
                 <>
                   <h2>No bookings found</h2>
+                  <p><Link to={"/book"} id="nav-book">Book</Link> a service now.</p>
                 </>
               )}
             </div>

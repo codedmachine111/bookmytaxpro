@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   gap: 5%;
-  border: 1.5px solid #0f0f0f;
+  border: 3px solid #0f0f0f;
   padding: 0.5rem;
   border-radius: 0.3rem;
   margin: 0.5rem 0;
@@ -36,6 +36,11 @@
     .expert-card-rating {
       font-size: 1rem;
       font-weight: 400;
+
+      #rating-color{
+        color: #ffc107;
+        text-shadow: 1px 1px 1px #0f0f0f;
+      }
     }
     .expert-card-services {
       font-size: 1rem;
