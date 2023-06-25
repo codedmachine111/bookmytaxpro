@@ -20,7 +20,7 @@ export const HomePage = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:3001/auth/verify", {
+      .get("https://bmt-server.vercel.app/auth/verify", {
         headers: {
           accessToken: localStorage.getItem("token"),
         },

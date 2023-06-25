@@ -13,7 +13,7 @@ export const BookPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/expert/all")
+      .get("https://bmt-server.vercel.app/expert/all")
       .then((response) => {
         setListOfExperts(response.data);
         setFilteredExperts(response.data);

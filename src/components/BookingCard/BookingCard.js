@@ -16,7 +16,7 @@ export const BookingCard = (props) => {
     setLoading(true);
     axios
       .put(
-        `http://localhost:3001/booking/update/`,
+        `https://bmt-server.vercel.app/booking/update/`,
         {
           status: "completed",
           id: ticketId,
@@ -42,7 +42,7 @@ export const BookingCard = (props) => {
     setLoading(true);
     axios
       .put(
-        `http://localhost:3001/booking/update/`,
+        `https://bmt-server.vercel.app/booking/update/`,
         {
           status: "cancelled",
           id: ticketId,
@@ -77,7 +77,7 @@ export const BookingCard = (props) => {
     const rating = parseInt(document.getElementById("rating").value);
 
     axios
-      .get(`http://localhost:3001/expert/byName`, {
+      .get(`https://bmt-server.vercel.app/expert/byName`, {
         expertName: expertName,
       })
       .then((res) => {
@@ -98,7 +98,7 @@ export const BookingCard = (props) => {
           // Update the expert's rating and totalRatings in the database
           axios
             .put(
-              `http://localhost:3001/expert/update/`,
+              `https://bmt-server.vercel.app/expert/update/`,
               {
                 rating: parseFloat(newRating),
                 totalRatings: newTotalRatings,

@@ -14,7 +14,7 @@ export const BookingsBoard = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:3001/booking/all/${authUser.userId}`,{
+      .get(`https://bmt-server.vercel.app/booking/all/${authUser.userId}`,{
         headers: {
           accessToken: localStorage.getItem("token"),
         },

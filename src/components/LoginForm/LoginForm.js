@@ -28,7 +28,7 @@ export const LoginForm = (props) => {
       password: values.password,
     };
     setLoading(true);
-    axios.post(`http://localhost:3001/auth/login`, userObject).then((res) => {
+    axios.post(`https://bmt-server.vercel.app/auth/login`, userObject).then((res) => {
       if (res.data.message === "Login Successful") {
         resetFormFields();
         setAuthUser({

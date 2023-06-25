@@ -30,7 +30,7 @@ export const ExpertCard = (props) => {
     };
     axios
       .post(
-        `http://localhost:3001/booking/add`,
+        `https://bmt-server.vercel.app/booking/add`,
         {
           expertName: expertObject.expertName,
           date: expertObject.date,
