@@ -57,6 +57,9 @@
     #add-rating {
       background-color: #ffc107;
     }
+    #cancel-booking {
+      background-color: #f44336;
+    }
   }
 
   .book-edit-form {
@@ -135,7 +138,7 @@
           background-color: #4caf50;
         }
       }
-      #cancel-icon {
+      #cancel-icon, #cancel-booking {
         background-color: #f44336;
         #ic {
           background-color: #f44336;

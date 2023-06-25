@@ -5,6 +5,7 @@ import { HomePage } from "./pages/HomePage/HomePage";
 import { Auth } from "./pages/Auth/Auth";
 import { createContext, useState } from "react";
 import { BookPage } from "./pages/BookPage/BookPage";
+import { About } from "./pages/About/About";
 
 export const UserContext = createContext();
 export const BookingsContext = createContext();
@@ -35,6 +36,7 @@ function App() {
                   <Route path="/home" element={<HomePage />} />
                   <Route path="/book" element={<BookPage />} />
                   <Route path="/auth" element={<Auth />} />
+                  <Route path="/about" element={<About />} />
                 </Routes>
               </Router>
             </ToggleChatBotContext.Provider>

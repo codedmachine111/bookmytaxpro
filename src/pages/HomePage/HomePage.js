@@ -67,11 +67,11 @@ export const HomePage = () => {
             </div>
             <div className="home-content">
               <div className="home-content-user">
-                <h1>Your Booked Services</h1>
+                <h1>Your Booked <span id="diff">S</span>ervices</h1>
                 <BookingsBoard />
               </div>
               <div className="home-content-experts">
-                <h1>Our Experts</h1>
+                <h1>Our <span>E</span>xperts</h1>
                 <ExpertsList />
               </div>
             </div>

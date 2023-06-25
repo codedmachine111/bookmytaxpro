@@ -9,6 +9,8 @@ export const BookingCard = (props) => {
   const { service, date, status, expertName, ticketId } = props;
   const [loading, setLoading] = useState(false);
   const [editing, setEditing] = useState(false);
+  const [isCancelled, setIsCancelled] = useState(false);
+  const [isRated, setIsRated] = useState(false);
 
   const onMarkCompleteHandler = () => {
     setLoading(true);
@@ -36,6 +38,32 @@ export const BookingCard = (props) => {
       });
   };
 
+  const onCancelBookingHandler = () => {
+    setLoading(true);
+    axios
+      .put(
+        `http://localhost:3001/booking/update/`,
+        {
+          status: "cancelled",
+          id: ticketId,
+        },
+        {
+          headers: {
+            accessToken: localStorage.getItem("token"),
+          },
+        }
+      )
+      .then((res) => {
+        if (res.data.error) {
+          console.log(res.data.error);
+          setLoading(false);
+        } else {
+          setLoading(false);
+          setIsCancelled(true);
+          window.location.reload();
+        }
+      });
+  };
   const onEditHandler = () => {
     setEditing(true);
   };
@@ -47,9 +75,9 @@ export const BookingCard = (props) => {
   const onSaveEditHandler = () => {
     setLoading(true);
     const rating = parseInt(document.getElementById("rating").value);
-  
+
     axios
-      .get(`http://localhost:3001/expert/byName`,{
+      .get(`http://localhost:3001/expert/byName`, {
         expertName: expertName,
       })
       .then((res) => {
@@ -61,12 +89,12 @@ export const BookingCard = (props) => {
           const expertId = expert.id;
           const currentRating = expert.rating ? expert.rating : 0;
           const totalRatings = expert.totalRatings ? expert.totalRatings : 0;
-  
+
           // Calculate the new average rating
           const newTotalRatings = totalRatings + 1;
           const newRating =
             (currentRating * totalRatings + rating) / newTotalRatings;
-  
+
           // Update the expert's rating and totalRatings in the database
           axios
             .put(
@@ -87,14 +115,13 @@ export const BookingCard = (props) => {
                 console.log(res.data.error);
               } else {
                 setLoading(false);
+                setIsRated(true);
                 window.location.reload();
               }
             });
         }
       });
   };
-  
-
   return (
     <>
       <div className="booking-card-container">
@@ -123,6 +150,11 @@ export const BookingCard = (props) => {
                     title="mark as completed"
                     onClick={onMarkCompleteHandler}
                   />
+                  <Button
+                    title="Cancel Booking"
+                    id="cancel-booking"
+                    onClick={onCancelBookingHandler}
+                  />
                 </>
               )}
             </>
@@ -136,7 +168,12 @@ export const BookingCard = (props) => {
                       <div className="book-edit-form-data">
                         <div className="book-edit-form-rating">
                           <label htmlFor="rating">Rating/5</label>
-                          <input type="number" id="rating" name="rating" max={5}/>
+                          <input
+                            type="number"
+                            id="rating"
+                            name="rating"
+                            max={5}
+                          />
                         </div>
                       </div>
                       {loading ? (
@@ -148,18 +185,24 @@ export const BookingCard = (props) => {
                       ) : (
                         <>
                           <div className="book-edit-form-buttons">
-                            <Button
-                              title="Save"
-                              onClick={onSaveEditHandler}
-                              icon="faCheck"
-                              id="save-icon"
-                            />
-                            <Button
-                              title="Cancel"
-                              onClick={onCancelEditHandler}
-                              icon="faXmark"
-                              id="cancel-icon"
-                            />
+                            {!isCancelled ? (
+                              <>
+                                <Button
+                                  title="Save"
+                                  onClick={onSaveEditHandler}
+                                  icon="faCheck"
+                                  id="save-icon"
+                                />
+                                <Button
+                                  title="Cancel"
+                                  onClick={onCancelEditHandler}
+                                  icon="faXmark"
+                                  id="cancel-icon"
+                                />
+                              </>
+                            ) : (
+                              <></>
+                            )}
                           </div>
                         </>
                       )}
@@ -167,11 +210,17 @@ export const BookingCard = (props) => {
                   </>
                 ) : (
                   <>
-                    <Button
-                      title="Add rating"
-                      id="add-rating"
-                      onClick={onEditHandler}
-                    />
+                    {(isRated || isCancelled) ? (
+                      <></>
+                    ) : (
+                      <>
+                        <Button
+                          title="Add rating"
+                          id="add-rating"
+                          onClick={onEditHandler}
+                        />
+                      </>
+                    )}
                   </>
                 )}
               </p>
