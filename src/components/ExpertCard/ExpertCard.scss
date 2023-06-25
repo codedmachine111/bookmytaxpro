@@ -165,3 +165,38 @@
     }
   }
 }
+
+
+// FOR MOBILE
+@media screen and (max-width: 600px) {
+  .expert-card-container {
+    flex-direction: column;
+    gap: 2%;
+    .expert-card-icon {
+      width: 30%;
+      padding: 0.5rem;
+      svg {
+        width: 70%;
+        height: 70%;
+      }
+    }
+    .expert-card-details {
+      width: 100%;
+      .expert-card-name {
+        font-size: 1.2rem;
+      }
+      .expert-card-rating {
+        font-size: 0.8rem;
+      }
+      .expert-card-services {
+        font-size: 0.8rem;
+      }
+    }
+    .expert-card-button {
+      width: 100%;
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,66 +1,88 @@
 .about-page-container {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-self: center;
-    margin: 0 auto;
-    padding: 1rem;
-    border:none;
-    #diff{
-      color: #3770ff;
-    }
-    #link{
-      color: #3770ff;
-      text-decoration: none;
-    }
-    h1 {
-      font-size: 4rem;
-  
-      &::after {
-        content: "";
-        display: block;
-        margin: 0.5rem 0;
-        width: 5rem;
-        padding-top: 8px;
-        border-bottom: 4px solid #3770ff;
-        opacity: 0.6;
-      }
-    }
-    h2 {
-      font-size: 2rem;
-      margin: 0.5rem;
-  
-      &::after {
-        content: "";
-        display: block;
-        margin: 0.5rem 0;
-        width: 5rem;
-        padding-top: 8px;
-        border-bottom: 4px solid #3770ff;
-        opacity: 0.6;
-      }
-    }
-  
-    li {
-      margin: 1rem 0;
-      font-size: 1.2rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  margin: 0 auto;
+  padding: 1rem;
+  border: none;
+  #diff {
+    color: #3770ff;
+  }
+  #link {
+    color: #3770ff;
+    text-decoration: none;
+  }
+  h1 {
+    font-size: 4rem;
+
+    &::after {
+      content: "";
       display: block;
-    span{
-        font-weight: bold;
-        text-decoration: underline;
-    }
-      &::before {
-        content: "•";
-        color: #3770ff;
-        font-weight: bold;
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
-      }
-    }
-  
-    p{
-      font-size: 1.2rem;
+      margin: 0.5rem 0;
+      width: 5rem;
+      padding-top: 8px;
+      border-bottom: 4px solid #3770ff;
+      opacity: 0.6;
     }
   }
+  h2 {
+    font-size: 2rem;
+    margin: 0.5rem;
+
+    &::after {
+      content: "";
+      display: block;
+      margin: 0.5rem 0;
+      width: 5rem;
+      padding-top: 8px;
+      border-bottom: 4px solid #3770ff;
+      opacity: 0.6;
+    }
+  }
+
+  li {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    display: block;
+    span {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    &::before {
+      content: "•";
+      color: #3770ff;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+
+// FOR MOBILE
+@media screen and (max-width: 600px) {
+  .about-page-container {
+    width: 100%;
+    padding: 0 2rem;
+    margin: 0;
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    li {
+      font-size: 1rem;
+    }
+  }
+}

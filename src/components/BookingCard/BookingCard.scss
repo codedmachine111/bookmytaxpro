@@ -147,3 +147,35 @@
     }
   }
 }
+
+// FOR MOBILE
+@media screen and (max-width: 600px) {
+  .booking-card-container {
+    flex-direction: column;
+    gap: 2%;
+    .booking-card-info {
+      width: 100%;
+      h2 {
+        font-size: 16px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+    .booking-card-date {
+      width: 100%;
+      p {
+        font-size: 12px;
+      }
+    }
+    .booking-card-status {
+      width: 100%;
+      p {
+        font-size: 12px;
+      }
+      .btn {
+        font-size: 0.5rem;
+      }
+    }
+  }
+}
