@@ -62,6 +62,9 @@ REACT_APP_OPENAI_API_KEY = "YOUR-API-KEY"
 npm start
 ```
 
+## Working Demo
+Check out the working demo on ![youtube](https://www.youtube.com/watch?v=ugWroyAdJvc).
+
 ## Contribution
 
 This project was developed as part of the ![Technoverse](https://gdscmbcet.notion.site/TechnoVerse-by-GDSC-MBCET-506c7e43bb904ecca901aa63c3702028) Hackathon. Contributions are welcome! If you have any suggestions, improvements, or bug fixes, please submit a pull request or open an issue on the GitHub repository.
