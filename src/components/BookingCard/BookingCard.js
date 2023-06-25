@@ -93,14 +93,14 @@ export const BookingCard = (props) => {
           // Calculate the new average rating
           const newTotalRatings = totalRatings + 1;
           const newRating =
-            (currentRating * totalRatings + rating) / newTotalRatings;
+            ((currentRating * totalRatings + rating) / newTotalRatings).toFixed(2);
 
           // Update the expert's rating and totalRatings in the database
           axios
             .put(
               `http://localhost:3001/expert/update/`,
               {
-                rating: newRating,
+                rating: parseFloat(newRating),
                 totalRatings: newTotalRatings,
                 expertName: expertName,
               },

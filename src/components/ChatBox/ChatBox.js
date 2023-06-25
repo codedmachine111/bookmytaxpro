@@ -120,7 +120,7 @@ export const ChatBox = () => {
         <div className="chatbot-messages">
           {chatMessages.length > 0 ? (
             chatMessages.map((message) => {
-              return <ChatMessage key={message.id} message={message.message} />;
+              return <ChatMessage key={message.id} message={message.response} />;
             })
           ) : (
             <>
