@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+> **Note**
+> This project was developed as part of the Technoverse Hackathon
+<p align="center">
+  <img src="https://github.com/codedmachine111/bookmytaxpro/assets/88738817/d3ff43cd-85ea-4a2a-9034-a72f3b649a32" alt="coincontrol-banner" width="500">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Live Demo](https://bookmytaxpro.vercel.app) | [Server Repository](https://github.com/codedmachine111/bmt-server)
 
-## Available Scripts
+# BookmyTaxpro
 
-In the project directory, you can run:
+We streamline the process of finding and booking Chartered Accountants and Financial Experts by providing a user-friendly web application that enables users to easily search for financial services, select from a pool of expert CAs, and book consultations tailored to their specific needs.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Booking Financial Services with Experts.
+- AI-Powered Chatbot Integration.
+- Manage Services.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Built with
+<p align="left">
+   <img src="https://www.svgrepo.com/show/452092/react.svg" height="50px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <img src="https://www.svgrepo.com/show/354118/nodejs.svg" height="50px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <img src="https://www.svgrepo.com/show/374002/prisma.svg" height="50px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <img src="https://pbs.twimg.com/profile_images/1504919223168077836/RSsCSpKf_400x400.jpg" height="50px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <img src="https://www.svgrepo.com/show/349502/sass.svg" height="50px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
 
-### `npm test`
+- [**React**](https://reactjs.org/): JavaScript library for building user interfaces.
+- [**Node.js**](https://nodejs.org/): JavaScript runtime environment that allows executing JavaScript code outside of a web browser.
+- [**Prisma**](https://www.prisma.io/): Modern, type-safe ORM for Node.js and TypeScript.
+- [**Planetscale**](https://planetscale.com/): Highly scalable, globally distributed database.
+- [**Sass**](https://sass-lang.com/): CSS extension language that provides more advanced features and capabilities.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation steps
 
-### `npm run build`
+1. - Fork the [repo](https://github.com/codedmachine111/bookmytaxpro)
+   - Clone the repo to your local machine `git clone https://github.com/codedmachine111/bookmytaxpro.git`
+   - Change current directory `cd bookmytaxpro`
+2. Install latest version of [Nodejs](https://nodejs.org/en/) and install all the dependencies using:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Generate prisma client
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npx prisma generate
+```
 
-### `npm run eject`
+4. For using the chatbot, create a .env file in the root directory of the project and add:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+REACT_APP_OPENAI_API_KEY = "YOUR-API-KEY"
+```
+> **Note**
+> You need to get your OpenAI API key from ![here](https://platform.openai.com/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Start the development server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contribution
 
-## Learn More
+This project was developed as part of the ![Technoverse](https://gdscmbcet.notion.site/TechnoVerse-by-GDSC-MBCET-506c7e43bb904ecca901aa63c3702028) Hackathon. Contributions are welcome! If you have any suggestions, improvements, or bug fixes, please submit a pull request or open an issue on the GitHub repository.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [MIT License](LICENSE).
