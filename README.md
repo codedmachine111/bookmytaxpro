@@ -4,7 +4,7 @@
   <img src="https://github.com/codedmachine111/bookmytaxpro/assets/88738817/d3ff43cd-85ea-4a2a-9034-a72f3b649a32" alt="coincontrol-banner" width="500">
 </p>
 
-[Live Demo](https://bookmytaxpro.vercel.app) | [Server Repository](https://github.com/codedmachine111/bmt-server)
+<a href="https://bookmytaxpro.vercel.app">Live Demo</a> | <a href="https://github.com/codedmachine111/bmt-server">Server repo</a>
 
 # BookmyTaxpro
 
@@ -33,7 +33,7 @@ We streamline the process of finding and booking Chartered Accountants and Finan
 
 ## Installation steps
 
-1. - Fork the [repo](https://github.com/codedmachine111/bookmytaxpro)
+1. - Fork the <a href="https://github.com/codedmachine111/bookmytaxpro">youtube</a>
    - Clone the repo to your local machine `git clone https://github.com/codedmachine111/bookmytaxpro.git`
    - Change current directory `cd bookmytaxpro`
 2. Install latest version of [Nodejs](https://nodejs.org/en/) and install all the dependencies using:
@@ -54,7 +54,7 @@ npx prisma generate
 REACT_APP_OPENAI_API_KEY = "YOUR-API-KEY"
 ```
 > **Note**
-> You need to get your OpenAI API key from ![here](https://platform.openai.com/)
+> You need to get your OpenAI API key from <a href="https://platform.openai.com/">here</a>
 
 5. Start the development server:
 
@@ -63,11 +63,11 @@ npm start
 ```
 
 ## Working Demo
-Check out the working demo on ![youtube](https://www.youtube.com/watch?v=ugWroyAdJvc).
+Check out the working demo on <a href="https://www.youtube.com/watch?v=ugWroyAdJvc">youtube</a>
 
 ## Contribution
 
-This project was developed as part of the ![Technoverse](https://gdscmbcet.notion.site/TechnoVerse-by-GDSC-MBCET-506c7e43bb904ecca901aa63c3702028) Hackathon. Contributions are welcome! If you have any suggestions, improvements, or bug fixes, please submit a pull request or open an issue on the GitHub repository.
+This project was developed as part of the <a href="https://gdscmbcet.notion.site/TechnoVerse-by-GDSC-MBCET-506c7e43bb904ecca901aa63c3702028">Technoverse</a> Hackathon. Contributions are welcome! If you have any suggestions, improvements, or bug fixes, please submit a pull request or open an issue on the GitHub repository.
 
 ## License
 
